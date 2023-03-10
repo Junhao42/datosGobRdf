@@ -1,4 +1,4 @@
-FROM ontotext/graphdb:tag
+FROM ontotext/graphdb:10.1.5
 
 RUN mkdir /root/graphdb-import
 
