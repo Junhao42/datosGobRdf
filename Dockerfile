@@ -4,6 +4,6 @@ RUN mkdir /root/graphdb-import
 
 WORKDIR /root/graphdb-import
 
-RUN curl -O https://www.zaragoza.es/sede/servicio/urbanismo-infraestructuras/estacion-bicicleta.ttl
+RUN curl -O https://www.zaragoza.es/sede/servicio/urbanismo-infraestructuras/estacion-bicicleta.ttl #descargamos los archivos .ttl
 
 EXPOSE 7200
