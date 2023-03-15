@@ -4,7 +4,7 @@ En este repositorio se proporcionan las distintas versiones que puedan tener una
 
 ### Instrucciones:
 #### 1. Creación del archivo Dockerfile.
-Empezaremos creando el [dockerfile](https://www.cloudbees.com/blog/what-is-a-dockerfile). En un archivo sin extensión de nombre `Dockerfile` seguimos los siguientes pasos. Partimos de la imagen de `ontotext/graphdb:10.1.5`. Luego, nos situamos en la carpeta `/root/graphdb-import`. Esta carpeta nos permite insertar archivos para **GraphDB**. Finalmente, descargamos el archivo de extension _.ttl_ del dataset deseado, en nuestro caso sobre  [estaciones de bicicleta](https://www.zaragoza.es/sede/servicio/urbanismo-infraestructuras/estacion-bicicleta.ttl) y exponemos el puerto 7200. A continuación mostramos el resultado final:
+Empezaremos creando el [dockerfile](https://www.cloudbees.com/blog/what-is-a-dockerfile). En un archivo sin extensión de nombre `Dockerfile` seguimos los siguientes pasos. Partimos de la imagen de `ontotext/graphdb:10.1.5`. Luego, nos situamos en la carpeta `/root/graphdb-import`. Esta carpeta nos permite insertar archivos para **GraphDB**. Finalmente, descargamos el archivo de extension _.ttl_ del dataset deseado, en nuestro caso sobre  [estaciones de bicicleta](https://www.zaragoza.es/sede/servicio/urbanismo-infraestructuras/estacion-bicicleta.ttl) y exponemos el puerto **7200**. A continuación mostramos el resultado final:
 
 ```dockerfile
 FROM ontotext/graphdb:10.1.5
@@ -29,8 +29,16 @@ docker run --name 'NombreContenedor' -p 7200:7200 'ImagenDocker'
 
 #### 4. Creación de la imagen final.
 
-PARTE DE RASERO
-Finalmente, crearemos una imagen a partir del contenedor levantado
+Finalmente, crearemos una imagen a partir del contenedor levantado con el fin de que aquellos que quieran usar los datos que tenemos disponibles no tengan que volver a realizar el proceso de creación de la imagen. Para ello usaremos el siguiente mandato:
 ```bat
-docker lo que sea
+docker commit `IdContenedor` `NombreNuevaImagen`
 ```
+
+De esta forma, se creará una imagen, a partir del contenedor que especificamos, la cual guardará todos los cambios realizados de forma automática. Para poder ver el Id del contenedor podemos usar el comando:
+```bat
+docker container ps
+```
+De esta forma, obtenemos una visualización de la información de todos los contenedores activos que tenemos.
+
+
+En este punto, hemos conseguido crear una imagen docker que facilita la creación de nuestro servicio de forma totalmente automática. Es decir, podemos crear un contenedor usando esta nueva imagen, el cual incorporará el repositorio con los datos ya importados.
