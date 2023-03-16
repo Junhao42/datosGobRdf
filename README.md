@@ -46,6 +46,7 @@ En este punto, hemos conseguido crear una imagen docker que facilita la creació
 #### 5. Uso de la nueva imagen.
 
 Para poder usar la nueva imagen que tenemos disponible, tan solo tenemos que levantar un contenedor que se base en esta nueva imagen. Tras ejecutar el mandato docker commit, hemos conseguido generar una imagen que captura el estado del servidor que teniamos levantado. Es decir, si usamos esa imagen podremos restaurar el servicio que teníamos activo desde cualquier máquina. 
+
 Para ello, tan solo tenemos que levantar el contendor de la misma manera que hemos hecho anteriormente, usando el comando:
 
 ```bat
@@ -57,6 +58,7 @@ Donde 'NombreNuevaImagen' es el mismo nombre que le hemos dado a la imagen obten
 #### 6. Uso de nuestra imagen para levantar un contenedor.
 
 Si tan solo queremos emplear la imagen que ya tenemos generada, sin necesidad de realizar todo el proceso de creación, podemos emplear una imagen desplegada en docker hub. El nombre de dicha imagen es 'alexrasero/rdfrepository:v1.3', si quieremos usar la última versión desplegada. 
+
 Por tanto, para poder ejecutar el contenedor usando la imagen, tendríamos que ejecutar el siguiente comando:
 
 ```bat
