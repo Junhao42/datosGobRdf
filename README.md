@@ -64,3 +64,7 @@ Por tanto, para poder ejecutar el contenedor usando la imagen, tendríamos que e
 ```bat
 docker run --name repositoriordf -p 7200:7200 alexrasero/rdfrepository:v1.3
 ``` 
+
+#### 7. Consulta Sparql.
+
+Mostramos una consultaa sparql que hemos creado para ejecutarse sobre los datos importados en GraphDB, que devuelve una parte de los mismos:
