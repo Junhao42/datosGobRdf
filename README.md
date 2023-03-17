@@ -68,3 +68,11 @@ docker run --name repositoriordf -p 7200:7200 alexrasero/rdfrepository:v1.3
 #### 7. Consulta Sparql.
 
 Mostramos una consultaa sparql que hemos creado para ejecutarse sobre los datos importados en GraphDB, que devuelve una parte de los mismos:
+
+
+```bat
+PREFIX rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+select * where { 
+    ?s ?p rdf:Property .
+} limit 100
+```
